@@ -1,3 +1,3 @@
-# Dashboard creado con React para consumir API's de proyecto final de Digital House
+# Dashboard creado con React para consumir API's de Proyecto Final de Digital House
 link del proyecto:
-https://github.com/AndyCarello/Grupo_17_
+https://github.com/malnieva/DashboardDigitalBooks
