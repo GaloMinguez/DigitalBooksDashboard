@@ -2,18 +2,16 @@ import React, { useEffect, useState } from "react";
 
 export const UltimoCliente = () => {
 
-    const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        // Petición Asincrónica al montarse el componente
-        const endpointUsers = "http://localhost:3000/api/users";
-        fetch(endpointUsers)
-          .then((response) => response.json())
-          .then((data) => setUsers(data.ultimoUsuario))
-          .catch((error) => console.log(error));
-      }, []);
-
-      console.log(users)
+  useEffect(() => {
+    // Petición Asincrónica al montarse el componente
+    const endpointUsers = "http://localhost:3000/api/users/5";
+    fetch(endpointUsers)
+      .then((response) => response.json())
+      .then((data) => setUsers(data.data))
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <>
       <div className="col-lg-6 mb-4">
@@ -25,13 +23,13 @@ export const UltimoCliente = () => {
           </div>
           <div className="card-body">
             <div className="row">
+              <div>
+                <img src= {`http://localhost:3002/img/${users.imagen}}`} alt="imagen de usuario" id="imgAddUser" />
+              </div>
               <div className="col-lg-6 mb-4 card-header py-3 m-0 font-weight-bold text-gray-800 centrado">
-                    <span>Nombre Completo:</span> <span> {users.lastname}, {users.name}</span>
-                    <p>Email: {users.email}</p>
-                    <p>Celular: {users.phone}</p>
-                    <p>Cumpleaños: {users.birthday}</p>
-                    <p>Direccion: {users.address}, Dto: {users.apartment}, Barrio: {users.neighborhood_id}</p>
-                </div>
+                <span>Nombre Completo:</span> <span> {users.fullName}</span>
+                <p>Email: {users.email}</p>
+              </div>
             </div>
             <div></div>
           </div>

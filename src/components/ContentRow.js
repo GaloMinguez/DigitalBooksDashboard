@@ -6,6 +6,7 @@ function ContentRow(){
     // traer las api de users
 	const [users, setUsers] = useState([]);
 	const [products, setProducts] = useState([]);
+    const [genres, setGenres] = useState([]);
     const [carts, setCarts] = useState([]);
     const [total, setTotal] = useState(0);
 
@@ -14,37 +15,62 @@ function ContentRow(){
 	// traer las api users
 	useEffect(() => {
 		// Petición Asincrónica al montarse el componente
-		const endpointUsers = 'http://localhost:3000/api/users';
+		const endpointUsers = 'http://localhost:3002/api/users';
 			fetch(endpointUsers)
 				.then(response => response.json())
-				.then( data => setUsers(data) )
+                .then(data => {
+                    setUsers(
+                        {
+                            count: data.meta.count,
+                            users: data.users,
+                        }
+                    )})
 				.catch(error => console.log(error))
 	}, [])
 
 	// traer las api products
 	useEffect(() => {
 		// Petición Asincrónica al montarse el componente
-		const endpointUsers = 'http://localhost:3002/api/products';
-			fetch(endpointUsers)
+		const endpointProducts = 'http://localhost:3002/api/products';
+			fetch(endpointProducts)
 				.then(response => response.json())
-				.then( data => {
-                    data.categorias = data.categorias.length;
-                    setProducts(data);
-                } )
+				.then(data => {
+                    setProducts(
+                        {
+                            count: data.meta.count,
+                            products: data.products,
+                        }
+                    )})
+				.catch(error => console.log(error))
+	}, [])
+
+    	// traer las api genres
+	useEffect(() => {
+		// Petición Asincrónica al montarse el componente
+		const endpointGenres = 'http://localhost:3002/api/genres';
+			fetch(endpointGenres)
+				.then(response => response.json())
+				.then(data => {
+                    setGenres(
+                        {
+                            count: data.meta.count,
+                            genres: data.genres,
+                        }
+                    )})
 				.catch(error => console.log(error))
 	}, [])
 
     // traer las api cars
-	useEffect(() => {
+	/*useEffect(() => {
 		// Petición Asincrónica al montarse el componente
 		const endpointUsers = 'http://localhost:3000/api/carts';
 			fetch(endpointUsers)
 				.then(response => response.json())
 				.then( data => setCarts(data) )
 				.catch(error => console.log(error))
-	}, [])
+	}, [])*/
     
-    useEffect(()=>{
+    /*useEffect(()=>{
         const calculateTotal = () => {
             const totalSum = carts.reduce((accumulator, currentValue) => accumulator + currentValue.total, 0);
             setTotal(totalSum);
@@ -52,45 +78,52 @@ function ContentRow(){
         
           calculateTotal();
     },[carts])
-    console.log(total);
+    console.log(total);*/
       
 
     /*  Cada set de datos es un objeto literal */
     let clientesInDB = {
-        title: 'Clientes',
+        title: 'CLIENTES',
         color: 'primary', 
-        cuantity: users.count,
+        quantity: users.count,
         icon: 'fa-user-check'
     }
     
     let totalProducts = {
-        title:' Productos', 
+        title:' PRODUCTOS', 
         color:'success', 
-        cuantity: products.count,
+        quantity: products.count,
         icon:'fa-cheese'
     }
     
-    let salesQuantity = {
-        title:'Venta total' ,
-        color:'warning',
-        cuantity: '$ '+ total || '2',
-        icon:'fa-clipboard-list',
+    let totalGenres = {
+        title:' GENEROS', 
+        color:'warning', 
+        quantity: genres.count,
+        icon:'fa-clipboard-list'
     }
 
-    let sociosQuantity = {
+/*    let salesQuantity = {
+        title:'Venta total' ,
+        color:'warning',
+        quantity: '$ '+ total || '2',
+        icon:'fa-clipboard-list',
+    }*/
+
+   /* let sociosQuantity = {
         title:'Categorias' ,
         color:'warning',
-        cuantity: products.categorias || '2',
+        quantity: products.categorias || '2',
         icon:'fa-clipboard-list',
-    }
+    }*/
 
     
 
     let cartProps = [
         clientesInDB,
-        salesQuantity,
+//        salesQuantity,
         totalProducts,
-        // sociosQuantity,
+        totalGenres,
     ];
 
     return (

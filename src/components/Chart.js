@@ -36,8 +36,7 @@ function Chart() {
                       <th>Nombre</th>
                       <th>Descripcion</th>
                       <th>Precio Unitario</th>
-                      <th>Categoria</th>
-                      {/* <th>Premios</th> */}
+                      <th>Genero</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -45,8 +44,7 @@ function Chart() {
                       <th>Nombre</th>
                       <th>Descripcion</th>
                       <th>Precio Unitario</th>
-                      <th>Categoria</th>
-                      {/* <th>Premios</th> */}
+                      <th>Genero</th>
                     </tr>
                   </tfoot>
                   <tbody>
