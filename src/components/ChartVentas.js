@@ -9,7 +9,7 @@ function ChartVentas() {
   // traer las api cars
 	useEffect(() => {
 		// Petición Asincrónica al montarse el componente
-		const endpointUsers = 'http://localhost:3000/api/carts';
+		const endpointUsers = 'http://localhost:3002/api/carts';
 			fetch(endpointUsers)
 				.then(response => response.json())
 				.then( data => setCarts(data) )

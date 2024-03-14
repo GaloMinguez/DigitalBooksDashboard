@@ -13,17 +13,6 @@ function GenresInDb() {
       .catch((error) => console.log(error));
   }, []);
 
-    // traer las api genres
-    /*useEffect(() => {
-      // Petición Asincrónica al montarse el componente
-      const endpointProducts = "http://localhost:3002/api/products";
-      fetch(endpointProducts)
-        .then((response) => response.json())
-        .then((data) => {setProducts(data.data)
-        })
-        .catch((error) => console.log(error));
-    }, []);*/
-
   return (
     <>
     <div className="col-lg-6 mb-4">

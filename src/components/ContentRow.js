@@ -7,8 +7,8 @@ function ContentRow(){
 	const [users, setUsers] = useState([]);
 	const [products, setProducts] = useState([]);
     const [genres, setGenres] = useState([]);
-    const [carts, setCarts] = useState([]);
-    const [total, setTotal] = useState(0);
+    //const [carts, setCarts] = useState([]);
+    //const [total, setTotal] = useState(0);
 
 
     

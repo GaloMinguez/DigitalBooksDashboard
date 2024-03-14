@@ -52,14 +52,6 @@ function SideBar(){
                         <span>Detalle de Ventas</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - Pages -->*/}
-                {/* <li className="nav-item">
-                <Link className="nav-link" to="/NuestrasCategorias">
-                        <i className="fas fa-cheese"></i>
-                        <span>Nuestras Categorias</span>
-                    </Link>
-                </li> */}
-
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
                     <Link className="nav-link" to="/Ultimas-Cargas">
