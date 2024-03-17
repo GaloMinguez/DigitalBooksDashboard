@@ -72,7 +72,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #858796;
+  color: #131313;
   text-align: left;
   background-color: #fff;
 }
@@ -92,6 +92,9 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+.title-sp {
+  color: rgb(163, 31, 53);
 }
 p {
   margin-top: 0;
@@ -3977,7 +3980,7 @@ input[type="submit"].btn-block {
 }
 .navbar-dark .navbar-text a:focus,
 .navbar-dark .navbar-text a:hover {
-  color: #fff;
+  color: hsl(0, 0%, 100%);
 }
 .card {
   position: relative;
@@ -8832,7 +8835,7 @@ a:focus {
   background-size: cover;
 }
 .bg-gradient-secondary {
-  background-color: #f4ece0;
+  background-color: red;
   background-size: cover;
 }
 .bg-gradient-success {
@@ -9261,7 +9264,7 @@ a:focus {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 800;
-  padding: 1.5rem 1rem;
+  padding: 3.5rem 1rem;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05rem;

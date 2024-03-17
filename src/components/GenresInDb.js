@@ -3,6 +3,7 @@ import  {CategoriasProducts}  from "./CategoriasProducts";
 
 function GenresInDb() {
   const [genres, setGenres] = useState([]);
+  //const [genresProducts, setGenresProducts] = useState([]);
 
   useEffect(() => {
     // Petición Asincrónica al montarse el componente
@@ -11,6 +12,12 @@ function GenresInDb() {
       .then((response) => response.json())
       .then((data) => setGenres(data.data))
       .catch((error) => console.log(error));
+
+      /*const endpointGenresProducts = `http://localhost:3002/api/genres/${genresProducts.id}/products`;
+      fetch(endpointGenresProducts)
+        .then((response) => response.json())
+        .then((data) => setGenresProducts(data.data))
+        .catch((error) => console.log(error));*/
   }, []);
 
   return (

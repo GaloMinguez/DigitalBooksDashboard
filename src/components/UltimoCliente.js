@@ -6,7 +6,7 @@ export const UltimoCliente = () => {
 
   useEffect(() => {
     // Petición Asincrónica al montarse el componente
-    const endpointUsers = "http://localhost:3002/api/users/5";
+    const endpointUsers = "http://localhost:3002/api/users/lastUser";
     fetch(endpointUsers)
       .then((response) => response.json())
       .then((data) => setUsers(data.data))
@@ -22,16 +22,17 @@ export const UltimoCliente = () => {
             </h5>
           </div>
           <div className="card-body">
-            <div className="row">
-              <div>
-                <img src= {`http://localhost:3002/img/users/${users.imagen}}`} alt="imagen de usuario" id="imgAddUser" />
-              </div>
-              <div className="col-lg-6 mb-4 card-header py-3 m-0 font-weight-bold text-gray-800 centrado">
-                <span>Nombre Completo:</span> <span> {users.fullName}</span>
-                <p>Email: {users.email}</p>
-              </div>
+            <div className="text-center">
+              <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" 
+                style={{ width: '15rem' }} 
+                src= "http://localhost:3002/img/users/default.png"
+                alt="imagen de usuario"
+                id="imgAddUser" />
             </div>
-            <div></div>
+            <h6 className="title-sp">Nombre Completo:</h6>
+            <p>{users.fullName}</p>
+            <h6 className="title-sp">Email:</h6>
+            <p>{users.email}</p>
           </div>
         </div>
       </div>

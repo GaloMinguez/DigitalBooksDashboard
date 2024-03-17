@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/LOGO-DB.png';
+import image from '../assets/images/LOGO.png';
 import ContentWrapper from './ContentWrapper';
 import ContentRow from './ContentRow';
 import NotFound from './NotFound';
@@ -13,12 +13,12 @@ function SideBar(){
     return(
         <React.Fragment>
             {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul className="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital Books"/>
+                        <img className="w-50" src={image} alt="Digital Books"/>
                     </div>
                 </a>
 
