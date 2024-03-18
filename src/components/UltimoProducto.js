@@ -22,17 +22,20 @@ export const UltimoProducto = () => {
           </div>
           <div className="card-body">
             <div className="text-center">
-              <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" 
-                style={{ width: '15rem' }} 
-                src= "http://localhost:3002/img/default.png"
+              <img className="img-fluid px-3 px-sm-4 mt-3 mb-4"
+                style={{ width: '15rem' }}
+                src="http://localhost:3002/img/default.png"
                 alt="imagen de usuario" />
             </div>
             <h6 className="title-sp">Nombre del producto:</h6>
             <p>{products.title}</p>
             <h6 className="title-sp">Descripción del producto:</h6>
-            <p>{products.description}</p>
+            <p>{products.description}
+            {products.publisher}</p>
             <h6 className="title-sp">Precio del producto:</h6>
-            <p>{products.price}</p>
+            <p>
+              {products.price}
+            </p>
           </div>
         </div>
       </div>
