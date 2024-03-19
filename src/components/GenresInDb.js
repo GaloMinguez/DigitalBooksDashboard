@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import  {CategoriasProducts}  from "./CategoriasProducts";
+import { CategoriasProducts } from "./CategoriasProducts";
 
 function GenresInDb() {
   const [genres, setGenres] = useState([]);
@@ -15,26 +15,27 @@ function GenresInDb() {
 
   return (
     <>
-    <div className="col-lg-6 mb-4">
-      <div className="card shadow mb-4">
-        <div className="card-header py-3">
-          <h5 className="m-0 font-weight-bold text-gray-800">
-            Nuestros Generos
-          </h5>
-        </div>
-        <div className="card-body">
-          <div className="row">
-            {
-              genres.map( ( row , i) => {
-                return <CategoriasProducts { ...row} key={i}/>
-            })
-            }
+      <div className="col-lg-6 mb-4">
+        <div className="card shadow mb-4">
+          <div className="card-header py-3">
+            <h5 className="m-0 font-weight-bold text-gray-800">
+              Nuestros Generos
+            </h5>
           </div>
-          <div>
+          <div className="card-body">
+            <div className="row">
+              {
+                genres.map((row, i) => {
+                  if (row.total_productos > 0) return <CategoriasProducts {...row} key={i} />
+                  return null
+                })
+              }
+            </div>
+            <div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
