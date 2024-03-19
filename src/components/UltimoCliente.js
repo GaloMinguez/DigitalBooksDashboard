@@ -25,7 +25,7 @@ export const UltimoCliente = () => {
             <div className="text-center">
               <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" 
                 style={{ width: '15rem' }} 
-                src= "http://localhost:3002/img/users/default.png"
+                src= { users.imageURL}
                 alt="imagen de usuario"
                 id="imgAddUser" />
             </div>
